@@ -1,16 +1,25 @@
 <% provide(:title, 'Sign up') %>
-<div style = "width: 200px; margin: 0 auto;">
-<form  action="form_action.asp" method="get">
+
+
 <h1>Sign up</h1>
-<p align="left">Name:</p>
-<input type="text" name="fname" />
-<p>Email:</p>
-<input type="text" name="email" />
-<p>Password:</p>
-<input type="password" name="password" />
-<p>Password Confirmation:</p>
-<input type="password" name="password" />
-<br/>
-<input type="submit" value="Submit" />
+<div class="row">
+  <div class="span6 offset3">
+<%= form_for(@user) do |f| %>
+	<%= render 'shared/error_messages' %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+	
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+	
+	<%= f.label :password_confirmation, "Confirmation"%>
+	<%= f.password_field :password_confirmation %>
+	
+	<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+	<% end %>
+</div>
 </div>
 </form>
