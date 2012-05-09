@@ -1,8 +1,6 @@
 Sample::Application.routes.draw do 
   resources :users 
-	users do
-    get :new, :show
-  end
+
   
   root to: 'pages#index'
   
